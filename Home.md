@@ -1,1 +1,1 @@
-Welcome to the Kade-Engine wiki!
+Welcome to the Kade Engine Modchart Documentation Page.
