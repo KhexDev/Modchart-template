@@ -1,3 +1,11 @@
+You can use each by just doing
+
+```lua
+function name(arguments)
+
+end
+```
+
 |  Name   |   Arguments    |                         Description                          |
 | :-----: | :------------: | :----------------------------------------------------------: |
 |  start  |   Song Name    |              Gets called when the song starts               |
