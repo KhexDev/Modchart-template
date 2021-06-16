@@ -28,6 +28,8 @@ Now that we've gotten done with our template file, we can start talking about ho
 
 Our modcharts work based on lua which is what you're going to be programming in, and an editor we recommend is [Visual Studio Code](https://code.visualstudio.com/)
 
+You should also look at our [actor id system](https://github.com/KadeDev/Kade-Engine/wiki/Actor-ID-System)
+
 ## Full Examples
 
 Here are some examples that you can base your code on.
