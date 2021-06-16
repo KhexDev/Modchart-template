@@ -17,6 +17,6 @@
 |     screenHeight     |  Int  |             The height of the current gamespace              |
 |       hudWidth       |  Int  |                     The width of the hud                     |
 |      hudHeight       |  Int  |                    The height of the hud                     |
-|	  scrollSpeed	   |  Int  |				   The current scrollspeed					  |
+|	  scrollSpeed	   |  Float |				   The current scrollspeed					  |
 |	  	mustHit		   | Bool  |  		If the current section is a must hit section		  |
 |	  strumLineY	   | Float |  			The current Strum Line Y Position				  |
