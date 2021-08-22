@@ -1,4 +1,4 @@
-## Receptor properties
+## Receptor properties (_G['receptor'..id..])
 |  Name   |                         Description                          |
 | :-----: | :----------------------------------------------------------: |
 |  x  | The position of the receptor on the X Plane |
