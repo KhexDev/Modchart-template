@@ -83,6 +83,38 @@ Getting receptors:
 for i=0,7,1 do
    local receptor = _G['receptor_'..i]
    -- mess with property's
-   -- receptor .x = 1, receptor .y = 30, etc.
+   -- receptor.x = 1, receptor.y = 30, etc.
 end
 ```
+
+Changing characters:
+
+```lua
+-- you can just type dad, gf, boyfriend in the code and modify them from anywhere!
+dad.changeCharacter(dad,"mom",30,30) -- changes to mom at x30 and y30
+```
+
+Window Position:
+
+```lua
+window.x = 10
+window.y = 25
+
+-- set to the games res
+window.height = 720
+window.width = 1280
+```
+
+Creating sprites:
+
+```lua
+makeSprite("pogImage","sprite",true) -- path (without the .png, relative to the chart path), what the variable will be called, and if you want to draw it behind the characters
+
+-- and now you can modify it 👯 
+sprite.x = 90
+sprite.y = 90
+```
+
+Something to note, almost every property has a "tweenPos", "tweenAngle", and "tweenAlpha" functions. Exceptions to the window class.
+
+If you want to look at what a class has, go check out it's page!
