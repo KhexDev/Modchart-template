@@ -28,131 +28,39 @@ Now that we've gotten done with our template file, we can start talking about ho
 
 Our modcharts work based on lua which is what you're going to be programming in, and an editor we recommend is [Visual Studio Code](https://code.visualstudio.com/)
 
-You should also look at our [actor id system](https://github.com/KadeDev/Kade-Engine/wiki/Actor-ID-System)
-
 ## Full Examples
 
 Here are some examples that you can base your code on.
 
 ```lua
-function start (song)
-	print("Song: " .. song .. " @ " .. bpm .. " downscroll: " .. downscroll)
+function start(song) -- do nothing
+    spinLength = 0
 end
 
 
-function update (elapsed) -- example https://twitter.com/KadeDeveloper/status/1382178179184422918
-	local currentBeat = (songPos / 1000)*(bpm/60)
-	for i=0,7 do
-		setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*0.25) * math.pi), i)
-		setActorY(_G['defaultStrum'..i..'Y'] + 32 * math.cos((currentBeat + i*0.25) * math.pi), i)
-	end
-end
+function update(elapsed)
 
-function beatHit (beat)
-   -- do nothing
-end
-
-function stepHit (step)
-   -- do nothing
-end
-
-function keyPressed (key)
-   -- do nothing
-end
-
-print("Mod Chart script loaded :)")
-```
-
-Spinning Receptor Example
-
-```lua
-function update (elapsed)
-	for i=0,7 do
-		setActorAngle(getActorAngle(i) + 15, i)
-	end
-end
-```
-
-Spinning Hud Example
-
-```lua
-function update (elapsed)
-	camHudAngle = camHudAngle + 0.005
-end
-```
-
-Spin at a specific part of the song
-
-```lua
-function update (elapsed)
-	if curStep >= 352 and curStep < 400 then
-		local currentBeat = (songPos / 1000)*(bpm/60)
-		for i=0,7 do
-			setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*0.25) * math.pi), i)
-			setActorY(_G['defaultStrum'..i..'Y'] + 32 * math.cos((currentBeat + i*0.25) * math.pi), i)
-		end
-	else
-        	for i=0,7 do
-			setActorX(_G['defaultStrum'..i..'X'],i)
-			setActorY(_G['defaultStrum'..i..'Y'],i)
-        	end
-    	end
-end
-```
-
-Showing/Hiding receptors/the hud
-
-```lua
-function start (song)
-    showOnlyStrums = true -- remove all hud elements besides notes and strums
-    for i=0,3 do -- fade out the first 4 receptors (the ai receptors)
-		tweenFadeIn(i,0,0.6)
-    end
-end
-```
-
-Looping through all of the rendered notes
-
-```lua
-for i = 0, getRenderedNotes() do -- sets all of the rendered notes to 0 0 on the x and y axsis
-	setRenderedNotePos(0,0,i)
-end
-```
-
-Centering BF's Side
-
-```lua
-function setDefault(id)
-	_G['defaultStrum'..id..'X'] = getActorX(id)
-end
-
--- put this somewhere in a function
-
-for i = 4, 7 do -- go to the center
-	tweenPosXAngle(i, _G['defaultStrum'..i..'X'] - 275,getActorAngle(i) + 360, 0.6, 'setDefault')
-end
-```
-
-Jumping Arrows Example
-```lua
-function stepHit (step)
-    if step == 1 then
-        setActorAccelerationY(100, 4)
-    end
-    if step == 3 then
-        setActorAccelerationY(100, 5)
-    end
-    if step == 5 then
-        setActorAccelerationY(100, 6)
-    end
-    if step == 7 then
-        setActorAccelerationY(100, 7)
-    end
-    for i=4,7 do
-        if getActorY(i) >= 100 then
-        setActorY(100, i)
-        setActorVelocityY(-100, i)
+    if difficulty == 2 and curStep > 400 then
+        if spinLength < 32 then
+            spinLength = spinLength + 0.2
         end
+
+
+        local currentBeat = (songPos / 1000)*(bpm/60)
+		for i=0,7,1 do
+            local receptor = _G['receptor_'..i]
+            receptor.angle = (spinLength / 7) * -math.sin((currentBeat + i*0.25) * math.pi)
+			receptor.x = receptor.defaultX + spinLength * math.sin((currentBeat + i*0.25) * math.pi)
+			receptor.y = receptor.defaultY + spinLength * math.cos((currentBeat + i*0.25) * math.pi)
+		end
     end
+end
+
+function playerTwoTurn()
+    camGame.tweenZoom(camGame,1.3,(crochet * 4) / 1000)
+end
+
+function playerOneTurn()
+    camGame.tweenZoom(camGame,1,(crochet * 4) / 1000)
 end
 ```
