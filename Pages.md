@@ -13,3 +13,5 @@
 [Sprite](https://github.com/KadeDev/Kade-Engine/wiki/Sprite)
 
 [Window](https://github.com/KadeDev/Kade-Engine/wiki/Window)
+
+[Camera](https://github.com/KadeDev/Kade-Engine/wiki/Camera)
