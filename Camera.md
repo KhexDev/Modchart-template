@@ -11,3 +11,4 @@
 | :-----: | :----------------------------------------------------------: |
 |  tweenPos | (self,x,y,time) |
 |  tweenAngle| (self,angle,time) |
+|  tweenZoom| (self,zoom,time) |
