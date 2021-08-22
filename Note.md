@@ -1,4 +1,4 @@
-## Note properties
+## Note properties (_G['note'..id..])
 |  Name   |                         Description                          |
 | :-----: | :----------------------------------------------------------: |
 |  x  | The position of the note on the X Plane |
