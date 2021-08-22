@@ -77,3 +77,12 @@ end
 
 ```
 
+Getting receptors:
+
+```lua
+for i=0,7,1 do
+   local receptor = _G['receptor_'..i]
+   -- mess with property's
+   -- receptor .x = 1, receptor .y = 30, etc.
+end
+```
