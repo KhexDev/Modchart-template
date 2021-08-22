@@ -33,7 +33,7 @@ Our modcharts work based on lua which is what you're going to be programming in,
 Here are some examples that you can base your code on.
 
 ```lua
-function start(song) -- do nothing
+function start(song)
     spinLength = 0
 end
 
@@ -64,3 +64,16 @@ function playerOneTurn()
     camGame.tweenZoom(camGame,1,(crochet * 4) / 1000)
 end
 ```
+
+
+Getting every note on screen:
+
+```lua
+for i = 0, getNumberOfNotes() do
+    local note = _G['note_' ..i]
+    -- mess with property's
+    -- note.x = 1, note.y = 30, etc.
+end
+
+```
+
