@@ -1,3 +1,7 @@
-**Remember**
+# [Getting Started](https://github.com/KadeDev/Kade-Engine/wiki/Getting-Started)
+## [Pages](https://github.com/KadeDev/Kade-Engine/wiki/Pages)
 
-When calling a function through a object, the first parameter is always itself.
+
+### **Remember**
+
+#### When calling a function through a object, the first parameter is always itself.
