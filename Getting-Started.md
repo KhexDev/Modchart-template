@@ -57,11 +57,11 @@ function update(elapsed)
 end
 
 function playerTwoTurn()
-    camGame.tweenZoom(camGame,1.3,(crochet * 4) / 1000)
+    camGame:tweenZoom(1.3,(crochet * 4) / 1000)
 end
 
 function playerOneTurn()
-    camGame.tweenZoom(camGame,1,(crochet * 4) / 1000)
+    camGame:tweenZoom(1,(crochet * 4) / 1000)
 end
 ```
 
@@ -91,7 +91,7 @@ Changing characters:
 
 ```lua
 -- you can just type dad, gf, boyfriend in the code and modify them from anywhere!
-dad.changeCharacter(dad,"mom",30,30) -- changes to mom at x30 and y30
+dad:changeCharacter("mom",30,30) -- changes to mom at x30 and y30
 ```
 
 Window Position:
