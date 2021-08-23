@@ -3,3 +3,8 @@
 | :-----: | :----------------------------------------------------------: |
 |  health | How much health the player has |
 |  accuracy | What accuracy the play is at |
+
+## Functions
+|  Name   |                         Arguments |
+| :-----: | :----------------------------------------------------------: |
+|  changeStage | (self,stageName) |
